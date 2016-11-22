@@ -13,7 +13,7 @@ public class Main {
         FileReader fileReader = new FileReader();
         List<String> ciphers = fileReader.readFile("ciphers.txt");
         StringBuilder stringBuilder = new StringBuilder("");
-        
+
         do {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
             try {
