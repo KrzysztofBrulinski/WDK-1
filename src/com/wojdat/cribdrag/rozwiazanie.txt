@@ -1,0 +1,12 @@
+Znaczki pułkownika Ujszaszy oznaczały, że być może jego zadaniem jest rozsyłanie niektórych listów wewnątrz Czechosłowacji.
+
+1. Sksorowalem 1 i 2 ciag. Crib: "Pułkownik "", wynik xora to "Z uwagi na ".
+2. Żeby sprawdzić w którym z ciągów jest "Z uwagi na" użyłem funkcji xor na 1 i 4, a potem na 2 i 4 ciągu. Okazało się,
+ że "Z uwagi na " jest w 2 ciagu.
+3. Aby ułatwic sobie zgadywanie kolejnych słów postanowiłem xorowac wszystkie ciagi z ciagiem 2, a pozniej z cribem "Z uwagi na ",
+ aby miec od razu wszystkie rozwiązania.
+4. Po wyczerpaniu łatwych możliwości zgadywania słów (ciągi są rożnej długości) miałem już dosyć tekstu jawnego, aby go wpisac w google.
+ Okazało się, że jest to artykuł z z3s, co umożliwiło mi wyciagniecie klucza.
+
+ Gdyby nie ułatwienie w postaci tekstu jawnego, który można znaleźć na google, nie byłoby możliwe odszyfrowanie całego najdłuższego ciągu,
+ ponieważ klucz był dłuższy niż każdy z ciągów.
