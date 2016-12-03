@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -20,9 +19,9 @@ public class Main {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
                 String guessHex = putCribToOneCipher(xored, bufferedReader);
 
-                xored = putCribToAllCiphers(ciphers, xored, guessHex);
+                putCribToAllCiphers(ciphers, xored, guessHex);
 
-                xored = getKeyFromPlaintext(ciphers, xored);
+                getKeyFromPlaintext(ciphers, xored);
         } while (true);
     }
 
@@ -38,7 +37,7 @@ public class Main {
         return guessHex;
     }
 
-    private static String putCribToAllCiphers(List<String> ciphers, String xored, String guessHex) {
+    private static void putCribToAllCiphers(List<String> ciphers, String xored, String guessHex) {
         for (int j = 0; j < 11; j++) {
             String first = ciphers.get(1);
             String second = ciphers.get(j);
@@ -47,11 +46,10 @@ public class Main {
             String utf88 = StringUtils.hexToUtf8(xor);
             System.out.println(utf88);
         }
-        return xored;
     }
 
-    private static String getKeyFromPlaintext(List<String> ciphers, String xored) {
-        String plaintext = "Pułkownik Ujszaszy był od roku 1934 attaché wojskowym Węgier w Pradze. Z uwagi na pełnioną przez niego rolę był naturalnym obiektem zainteresowania czechosłowackiego kontrwywiadu. Pułkownik prowadził zwykłe życie oficera na placówce. Mieszkał w eleganckiej willi, spał ze swoją piękną pokojówką, pił wino i dawał się obwozić szoferowi po okolicznych przybytkach rozkoszy. Jego asystentem był oficer Kovacs, który podzielał zamiłowanie do podobnego stylu życia. To jego obrano za pierwszy cel operacji. Czeski funkcjonariusz po kilku miesiącach ciężkiej dla wątroby pracy zaprzyjaźnił się z Węgrem i któregoś wieczoru zapytał go, co słychać w pracy. Kovacs odpowiedział, że w zasadzie to strasznie się nudzi, tylko co piątek musi kupować pułkownikowi czeskie znaczki pocztowe. Ta z pozoru mało znacząca informacja okazała się być prawdziwą perłą dla czechosłowackiego kontrwywiadu";
+    private static void getKeyFromPlaintext(List<String> ciphers, String xored) {
+        String plaintext = "Pułkownik Ujszaszy był od roku 1934 attaché wojskowym Węgier w Pradze. Z uwagi na pełnioną przez niego rolę był naturalnym obiektem zainteresowania czechosłowackiego kontrwywiadu. Pułkownik prowadził zwykłe życie oficera na placówce. Mieszkał w eleganckiej willi, spał ze swoją piękną pokojówką, pił wino i dawał się obwozić szoferowi po okolicznych przybytkach rozkoszy. Jego asystentem był oficer Kovacs, który podzielał zamiłowanie do podobnego stylu życia. To jego obrano za pierwszy cel operacji. Czeski funkcjonariusz po kilku miesiącach ciężkiej dla wątroby pracy zaprzyjaźnił się z Węgrem i któregoś wieczoru zapytał go, co słychać w pracy. Kovacs odpowiedział, że w zasadzie to strasznie się nudzi, tylko co piątek musi kupować pułkownikowi czeskie znaczki pocztowe. Ta z pozoru mało znacząca informacja okazała się być prawdziwą perłą dla czechosłowackiego kontrwywiadu.Czesi wiedzieli, że w piątki do Pragi przyjeżdża kurier z pocztą dyplomatyczną. Znaczki pułkownika Ujszaszy oznaczały, że być może jego zadaniem jest rozsyłanie niektórych listów wewnątrz Czechosłowacji";
         String[] sSentence = plaintext.split("(?<=[a-z])\\.\\s+");
         List<String> strings = Arrays.asList(sSentence);
         for (int i = 0; i < 11; i++) {
@@ -62,6 +60,5 @@ public class Main {
             xored = StringUtils.xor(ciph, inHex);
             System.out.println(xored);
         }
-        return xored;
     }
 }
