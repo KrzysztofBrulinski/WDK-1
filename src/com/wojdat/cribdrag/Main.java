@@ -17,11 +17,11 @@ public class Main {
         String xored = StringUtils.xor(ciphers.get(0), ciphers.get(1));
         do {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-                String guessHex = putCribToOneCipher(xored, bufferedReader);
+            String guessHex = putCribToOneCipher(xored, bufferedReader);
 
-                putCribToAllCiphers(ciphers, xored, guessHex);
+            putCribToAllCiphers(ciphers, xored, guessHex);
 
-                getKeyFromPlaintext(ciphers, xored);
+            getKeyFromPlaintext(ciphers, xored);
         } while (true);
     }
 
@@ -60,5 +60,9 @@ public class Main {
             xored = StringUtils.xor(ciph, inHex);
             System.out.println(xored);
         }
+    }
+
+    private static void printList(List<String> ciphers) {
+        ciphers.forEach(System.out::println);
     }
 }
