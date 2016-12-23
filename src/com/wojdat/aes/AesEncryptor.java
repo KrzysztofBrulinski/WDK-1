@@ -24,7 +24,6 @@ public class AesEncryptor {
 
     private static final int KEY = 0;
     private static final int IV = 1;
-    private static final boolean APPEND = true;
 
 
     public static String getRandomHexString(int length) {
@@ -68,7 +67,7 @@ public class AesEncryptor {
             List<String> lines = Arrays.asList(HexBin.encode(key), HexBin.encode(iv));
             try {
                 Files.write(path, lines, charset, StandardOpenOption.CREATE_NEW);
-            } catch (IOException e) {
+            } catch (IOException ignored) {
 
             }
         }
@@ -82,16 +81,14 @@ public class AesEncryptor {
         }
         try {
             Files.write(path, list, Charset.forName("UTF-8"), StandardOpenOption.CREATE_NEW);
-        } catch (IOException e) {
+        } catch (IOException ignored) {
 
         }
     }
 
     public static byte[] getBytesFromFile(int keyOrIv) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get("src/com/wojdat/aes/keys.txt"));
-        byte[] result;
-        result = DatatypeConverter.parseHexBinary(lines.get(keyOrIv));
-        return result;
+        return DatatypeConverter.parseHexBinary(lines.get(keyOrIv));
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException {
