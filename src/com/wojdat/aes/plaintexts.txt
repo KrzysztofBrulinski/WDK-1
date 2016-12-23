@@ -1,0 +1,3 @@
+Bit-Flipping jest popularnym atakiem na blokowe algorytmy szyfrowania w trybie CBC (ang. Cipher Block Chaining), wiązania bloków zaszyfrowanych. W wielu przypadkach prowadzi do przejęcia kont innych użytkowników (często administracyjnych), a w skrajnych przypadkach – nawet do zdalnego wykonywania kodu.									
+Padding Oracle to atak pozwalający na wyłuskanie tekstu jawnego z zaszyfrowanych danych bez znajomości klucza szyfrującego, a także – bez konieczności wyszukiwania błędów w samym algorytmie szyfrującym.
+Prędzej czy później komputery kwantowe o możliwościach znacznie przewyższających tradycyjne maszyny obliczeniowe wejdą do powszechnego użytku. Będzie to moment, w którym cała gama stosowanych obecnie algorytmów szyfrowania straci swoje znaczenie.

@@ -4,7 +4,15 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
+import java.util.List;
 
 public class AesDecryptor {
 
@@ -62,10 +70,19 @@ public class AesDecryptor {
         return null;
     }
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
+    public static void putPlaintextsToFile(String... plaintexts) {
+        Path path = Paths.get("src/com/wojdat/aes/plaintexts.txt");
+        try {
+            Files.write(path, Arrays.asList(plaintexts), Charset.forName("UTF-8"), StandardOpenOption.CREATE_NEW);
+        } catch (IOException e) {
+        }
+    }
 
-        System.out.println(decryptECBPKCS5());
-        System.out.println(decryptCBCPKC5());
-        System.out.println(decryptCTR());
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        String ecb = decryptECBPKCS5();
+        String cbc = decryptCBCPKC5();
+        String ctr = decryptCTR();
+
+        putPlaintextsToFile(ecb, cbc, ctr);
     }
 }

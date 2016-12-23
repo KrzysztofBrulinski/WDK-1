@@ -1,0 +1,6 @@
+1. Bezpieczny tryb to CTR. ECB nie maskuje wzorcow, natomiast CBC jest podatny na Padding Oracle (źródło: https://sekurak.pl/czym-jest-padding-oracle-atak-i-ochrona/)
+2. Podatność na ataki, patenty.
+3. Wynika to (z tego co wyczytałem) z - obecnie już nieważnych - praw eksportowych Stanów Zjednoczonych. Aby mieć możliwość korzystania z kluczy dłuższych niż 128b, należy zainstalować Java Cryptographic Extensions.
+4. Klucze należy trzymać w Key Vault, trzymać klucze z dala od zaszyfrowanych danych (źródło: https://www.owasp.org/index.php/Cryptographic_Storage_Cheat_Sheet)
+5. http://www.oracle.com/technetwork/java/javase/8-known-issues-2157115.html
+6. Sądzę, że lepiej symetrycznie zaszyfrować dane - przy dużych objętościach będzie szybciej. Jeśli chodzi o bezpieczeństwo to uważam, że przy zastosowaniu odpowiednich długości klucza, algorytmów i implementacji nie ma to znaczenia.
