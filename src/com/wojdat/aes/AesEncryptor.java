@@ -66,7 +66,7 @@ public class AesEncryptor {
             byte[] iv = DatatypeConverter.parseHexBinary(getRandomHexString(32));
             List<String> lines = Arrays.asList(HexBin.encode(key), HexBin.encode(iv));
             try {
-                Files.write(path, lines, charset, StandardOpenOption.CREATE_NEW);
+                Files.write(path, lines, charset, StandardOpenOption.WRITE);
             } catch (IOException ignored) {
 
             }
@@ -80,7 +80,7 @@ public class AesEncryptor {
             list.add(HexBin.encode(b));
         }
         try {
-            Files.write(path, list, Charset.forName("UTF-8"), StandardOpenOption.CREATE_NEW);
+            Files.write(path, list, Charset.forName("UTF-8"), StandardOpenOption.WRITE);
         } catch (IOException ignored) {
 
         }

@@ -75,7 +75,7 @@ public class AesDecryptor {
     public static void putPlaintextsToFile(String... plaintexts) {
         Path path = Paths.get("src/com/wojdat/aes/plaintexts.txt");
         try {
-            Files.write(path, Arrays.asList(plaintexts), Charset.forName("UTF-8"), StandardOpenOption.CREATE_NEW);
+            Files.write(path, Arrays.asList(plaintexts), Charset.forName("UTF-8"), StandardOpenOption.WRITE);
         } catch (IOException ignored) {
         }
     }
@@ -84,7 +84,6 @@ public class AesDecryptor {
         String ecb = decryptECBPKCS5();
         String cbc = decryptCBCPKC5();
         String ctr = decryptCTR();
-        System.out.println(ctr);
-//        putPlaintextsToFile(ecb, cbc, ctr);
+        putPlaintextsToFile(ecb, cbc, ctr);
     }
 }
