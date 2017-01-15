@@ -1,0 +1,15 @@
+ 
+md5
+05704fc17a3b1a9fcc90d546fd7ac1f2  input1.txt
+sha256
+47e6fb585fca024aa9a51d76f5ad13a9a60c1c931b8b0801cf15157ffea31abb  input1.txt
+ssdeep
+ssdeep,1.1--blocksize:hash:hash,filename
+48:FZc/fZEZcmfZEZcmfZEZcmfZEZcmfZEZcmfZEZcmfZEZcmfZEZcmfZI:kEEEEEEEES,"/home/sw/input1.txt"
+md5deep
+%%%% HASHDEEP-1.0
+%%%% size,md5,sha256,filename
+## Invoked from: /home/sw
+## $ hashdeep input1.txt
+## 
+3537,05704fc17a3b1a9fcc90d546fd7ac1f2,47e6fb585fca024aa9a51d76f5ad13a9a60c1c931b8b0801cf15157ffea31abb,/home/sw/input1.txt

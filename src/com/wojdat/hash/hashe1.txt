@@ -1,0 +1,16 @@
+
+md5 
+	83c52db2070468156b4e784c369d3781  a.out
+
+sha256 
+	f33f50c7423162d8b6177c4e2b98a825046d28a9f5c447d2964d149442d793b0  a.out
+ssdeep
+ssdeep,1.1--blocksize:hash:hash,filename
+96:GeTkHdgSXjfHXyNmf//KeFV0MR3HJpaZ7269Z7h7WmB4dB88oBdSijrS1V:GeXSr3yUfhV02HJA1dZ7hsNojSim,"/home/sw/a.out"
+md5deep
+%%%% HASHDEEP-1.0
+%%%% size,md5,sha256,filename
+## Invoked from: /home/sw
+## $ hashdeep a.out
+## 
+9361,83c52db2070468156b4e784c369d3781,f33f50c7423162d8b6177c4e2b98a825046d28a9f5c447d2964d149442d793b0,/home/sw/a.out

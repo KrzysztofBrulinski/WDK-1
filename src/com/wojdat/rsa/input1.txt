@@ -1,0 +1,2 @@
+protected MessageDigest(String algorithm)
+Creates a message digest with the specified algorithm name.
