@@ -1,0 +1,4 @@
+Zmiana jednego bita wiadomosci zmienia calkowicie wartosc funkcji skrotu. Pozwala to na uwierzytelnienie integralnosci i zawartosci danych.
+W przypadku ssdeep uzywamy hashowania rozmytego.
+Widac tutaj roznice w plikach tylko w tym miejscu, w ktorym zostala zmieniona zawartosc,
+poniewaz hash obliczany jest dla kazdego bloku, a wynikiem jest zlaczenie tych hashy.
